@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Alef Hebrew';
+  font-style: normal;
+  font-weight: 400;
+  src: url('Alef-Regular.eot');
+  src: url('Alef-Regular.eot?#iefix') format('embedded-opentype'),
+       url('Alef-Regular.woff') format('woff'),
+       url('Alef-Regular.svg') format('svg'),
+       url('Alef-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Alef Hebrew';
+  font-style: normal;
+  font-weight: 700;
+  src: url('Alef-Bold.eot');
+  src: url('Alef-Bold.eot?#iefix') format('embedded-opentype'),
+       url('Alef-Bold.woff') format('woff'),
+       url('Alef-Bold.svg') format('svg'),
+       url('Alef-Bold.ttf') format('truetype');
+}

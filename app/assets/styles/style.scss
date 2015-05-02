@@ -1,0 +1,267 @@
+@import "bootstrap/_bootstrap.scss";
+
+html, body {
+	width: 100%;
+  	height: 100%;
+  	margin: 0;
+  	padding: 0;
+}
+body {
+	background: #F9F9F9;
+	font-family: 'Alef Hebrew', serif;
+  	position: relative;
+}
+textarea {
+	width: 100%;
+	height: 90% !important;
+	height: auto;
+	resize: none;
+	color: #4A0D67 !important;
+}
+input[type="number"] {
+	margin: auto;
+	max-width: 120px
+}
+h4 {
+	margin-top: 25px;
+}
+h3 {
+	font-weight: normal;
+	color: red;
+}
+.winner {
+	font-weight: bold;
+	color: green;
+}
+.wrap {
+	width:100%;
+	position: relative;
+	height: 90%;
+	min-height: 430px;
+	padding: 20px 0;
+}
+
+.left-block, .right-block{
+	position: relative;
+	width: 40%;
+	height: 100%;
+	padding: 0 2%;
+}
+.left-block {
+	float: left;
+	left:0;
+}
+.right-block {
+	float: right;
+	right:0;
+}
+.center-block {
+	float: left;
+	width: 20%;
+	position: relative;
+	margin-top: 10px;
+}
+	.examples {
+		padding: 0;
+		width: 80px;
+		margin: auto;
+		border-radius: 6px 6px 3px 20px;
+		-webkit-border-radius: 6px 6px 3px 20px;
+		background-color: rgba(0, 255, 255, .08);
+		li {
+			list-style: none;
+			font-size: 13px;
+			text-align: center;
+			color: #428bca;
+			span {
+				cursor: pointer;
+				&:hover {
+					text-decoration: underline;
+				} 
+			}
+			&:after {
+				content:' ';
+				display:block;
+				border-top:1px solid black;
+				opacity: .2;
+				width: 50%;
+				margin: auto;
+			}
+			&:last-child:after {
+				content: none;
+			}
+		}
+	}
+.img-loading {
+	opacity: .7;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	top: 50%;
+			transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	z-index: 1;
+}
+.kewl-ninja {
+	max-width: 100%;
+	height: auto;
+	display: block;	
+	margin: 20px auto 0;
+			transition: transform .3s linear;
+	-webkit-transition: transform .3s linear;
+}
+.rotateY {
+			transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+}
+.btn {
+	display: block;
+	margin: auto;
+	outline: none !important;
+	transition: 0.3s ease;
+	-webkit-transition: 0.3s ease;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+
+	font-weight: bold;	
+	&:hover {
+		background: none;
+	}
+}
+.btn-info {
+	border: 3px solid #5bc0de;
+			transform: translateX(-3px); // space gained from the border
+	-webkit-transform: translateX(-3px); // space gained from the border
+		&:hover {
+		color: #5bc0de;
+	}
+}
+.btn-primary, .btn-primary:focus {
+	color: plum;
+	margin: 10px auto;
+	padding: 0;
+	max-width: 100px;
+	white-space: normal;
+	background: none;
+	border: solid;
+	&:hover{
+		color: #5bc0de;
+		border-color: #5bc0de;
+		background: none;
+	}
+}
+.clear {
+	clear: both;
+}
+.footer-wrap {
+	height: 10%;
+	min-height: 34px;
+	position: relative;
+}
+.footer {
+	position: absolute;
+	left: 50%;
+			transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	margin: auto;
+	bottom: 10px;
+}
+.center {
+	text-align: center;
+}
+.confirm {
+	opacity: .9;
+	position: fixed;
+	margin:	auto;
+	width: 200px;
+	top: 30%;
+	left: 0;
+	right: 0;
+	p {
+		margin: auto;
+		padding-bottom: 10px;
+		font-size: 24px !important;
+	}
+	&.ng-enter {
+				animation-timing-function: ease-in-out;
+		-webkit-animation-timing-function: ease-in-out;
+				animation: 0.2s slide-in;
+		-webkit-animation: 0.2s slide-in;
+	}
+	&.ng-leave {
+				animation: 0.2s fadey;
+		-webkit-animation: 0.2s fadey;
+				animation-timing-function: linear;
+		-webkit-animation-timing-function: linear;
+				animation-direction: reverse;
+		-webkit-animation-direction: reverse;
+	}
+}
+.x {
+	position: absolute;
+	cursor: pointer;
+	top: 10px;
+	right: 10px;
+	font-weight: bold;
+}
+.tooltip-inner {
+	color: black;
+	background-color: #D1D2F9;
+	opacity: .6;
+}
+p {
+	margin: 3px;
+}
+.tooltip-arrow {
+	border-top-color: #D1D2F9 !important;
+}
+@keyframes slide-in {
+  	from {
+  		top:0;
+  		opacity: 0;
+   	}
+  	to {
+  		top: 30%;
+  		opacity: .9;
+  	}
+}
+@-webkit-keyframes slide-in {
+  	from {
+  		top:0;
+  		opacity: 0;
+   	}
+  	to {
+  		top: 30%;
+  		opacity: .9;
+  	}
+}
+@keyframes fadey {
+  	from {
+  		opacity: 0;
+  	}
+  	to {
+  		opacity: 1;
+  	}
+}
+@-webkit-keyframes fadey {
+  	from {
+  		opacity: 0;
+  	}
+  	to {
+  		opacity: 1;
+  	}
+}
+
+@media only screen and (max-device-width: 480px) {
+	.btn {
+		font-size: 9px;
+	}
+	.examples {
+		width: 65px;
+	}
+	.kewl-ninja {
+	}
+}
+
+
