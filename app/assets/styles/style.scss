@@ -11,10 +11,27 @@ body {
 	font-family: 'Alef Hebrew', serif;
   	position: relative;
 }
+.form-control {
+  display: block;
+  padding: $padding-base-vertical $padding-base-horizontal;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $input-color;
+  background-color: $input-bg;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid $input-border;
+  border-radius: $input-border-radius;
+  -webkit-border-radius: $input-border-radius;
+  @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+
+  // Customize the `:focus` state to imitate native WebKit styles.
+  @include form-control-focus();
+
+}
 textarea {
 	width: 100%;
 	height: 90% !important;
-	height: auto;
 	resize: none;
 	color: #4A0D67 !important;
 }
@@ -123,6 +140,11 @@ h3 {
 	-webkit-transition: 0.3s ease;
 	border-radius: 3px;
 	-webkit-border-radius: 3px;
+	cursor: pointer;
+	@include button-size($padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-base, $border-radius-base);
+	@include user-select(none);
+
+	white-space: nowrap;
 
 	font-weight: bold;	
 	&:hover {
@@ -130,10 +152,12 @@ h3 {
 	}
 }
 .btn-info {
+	@include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
 	border: 3px solid #5bc0de;
 			transform: translateX(-3px); // space gained from the border
 	-webkit-transform: translateX(-3px); // space gained from the border
-		&:hover {
+	&:hover {
+		background: none;
 		color: #5bc0de;
 	}
 }
@@ -255,12 +279,10 @@ p {
 
 @media only screen and (max-device-width: 480px) {
 	.btn {
-		font-size: 9px;
+		font-size: 9px !important;
 	}
 	.examples {
 		width: 65px;
-	}
-	.kewl-ninja {
 	}
 }
 

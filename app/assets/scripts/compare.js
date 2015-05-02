@@ -24,16 +24,15 @@
 		$scope.resetErr = resetErr;
 		$scope.setExample = setExample;
 		setExample(FOR);
-// var img = $("img");
-// for (var i = 0; i < 100000; i++) {
-// 	img.css("transform", "rotateY(180deg)");
-// }
+
 		function compare () {
 			$scope.loading = true;
 			$timeout(function() {
 				try {
-					$scope.timer1 = parseFloat((runFunc($scope.userFunction1, 1) / 1000).toFixed(5));
-					$scope.timer2 = parseFloat((runFunc($scope.userFunction2, 2) / 1000).toFixed(5));
+					var func1 = getFunc($scope.userFunction1, 1),
+						func2 = getFunc($scope.userFunction2, 2);
+					$scope.timer1 = parseFloat((runFunc(func1, 1) / 1000).toFixed(5));
+					$scope.timer2 = parseFloat((runFunc(func2, 2) / 1000).toFixed(5));
 				} catch(err) {
 					$scope.timer1 = $scope.timer2 = undefined;
 					return;
@@ -43,16 +42,23 @@
 				}				
 			}, 30);
 		}
+		function getFunc(func, caller) {
+			try {
+				return eval("(function a () {" + func + "})");
+			} catch (err) {
+				$scope.err = "Error in function " + caller + "'s syntax: " + err;
+				throw(err);
+			}
+		}
 
 		function runFunc(func, caller) {
 			try {
-				var result = eval("(function a () {" + func + "})"),
-					timer = Date.now();
+				var timer = Date.now();
 				for (var i = 0; i < $scope.howMany; i++)
-					result();
+					func();
 				return Date.now() - timer;
 			} catch (err) {
-				$scope.err = "Error in function " + caller + ": " + err;
+				$scope.err = "Error in function " + caller + "'s runtime: " + err;
 				throw(err);
 			}
 		}
