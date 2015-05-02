@@ -69,22 +69,23 @@
 
 		function setExample (example) {
 			switch (example) {
-				case DATE: initFunctionValues('+new Date();', 'Date.now();', 1000000);
+				case DATE: initFunctionValues('+new Date();', 'Date.now();', 100000);
 					break;
-				case CACHE: initFunctionValues('var body = $("body");\n\nfor (var i = 0; i < 100000; i++) {\n\tbody.css("color", "black");\n}',
-											   'for (var i = 0; i < 100000; i++) {\n\t$("body").css("color", "black");\n}', 1);
+				case CACHE: initFunctionValues('var body = $("body");\n\nfor (var i = 0; i < 10000; i++) {\n\tbody.css("color", "black");\n}',
+											   'for (var i = 0; i < 10000; i++) {\n\t$("body").css("color", "black");\n}', 1);
 					break;
 				case TIMEOUT: initFunctionValues('var temp = 0,\n\ttimeout = $injector.get("$timeout");\n\ntimeout(function() {\n\ttemp++;\n}, 0);',
-												 'var temp = 0,\n\ttimeout = $injector.get("$timeout");\n\nsetTimeout(function() {\n\ttemp++;\n}, 0);', 100000);
+												 'var temp = 0,\n\ttimeout = $injector.get("$timeout");\n\nsetTimeout(function() {\n\ttemp++;\n}, 0);', 10000);
 					break;
-				case ARRAY: initFunctionValues('var arr = new Array(10000000);\n\nfor (var i = 0; i < 10000000; i++) {\n\tarr[i] = i;}',
-											 'var arr = [];\n\nfor (var i = 0; i < 10000000; i++) {\n\tarr[i] = i;}', 1);
+				case ARRAY: initFunctionValues('var arr = new Array(1000000);\n\nfor (var i = 0; i < 1000000; i++) {\n\tarr[i] = i;}',
+											 'var arr = [];\n\nfor (var i = 0; i < 1000000; i++) {\n\tarr[i] = i;}', 1);
 					break;
-				case FOR: initFunctionValues('var arr = [];\n\nfor (var i = 0; i < 1000000; i++) {\n\tarr[i] = i;\n}\n\nfor (var t in arr) {\n\tarr[t]+=t;\n}',
-											 'var arr = [];\n\nfor (var i = 0; i < 1000000; i++) {\n\tarr[i] = i;\n}\n\nfor (var t = 0; t < arr.length; t++) {\n\tarr[t]+=t;\n}', 1);
+				case FOR: initFunctionValues('var arr = [];\n\nfor (var i = 0; i < 100000; i++) {\n\tarr[i] = i;\n}\n\nfor (var t in arr) {\n\tarr[t]+=t;\n}',
+											 'var arr = [];\n\nfor (var i = 0; i < 100000; i++) {\n\tarr[i] = i;\n}\n\nfor (var t = 0; t < arr.length; t++) {\n\tarr[t]+=t;\n}', 1);
 			}
 			compare();
 		}
+		
 		function initFunctionValues (func1, func2, loops) {
 			$scope.userFunction1 = func1;
 			$scope.userFunction2 = func2;

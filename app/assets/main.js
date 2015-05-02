@@ -71,22 +71,23 @@
 
 		function setExample (example) {
 			switch (example) {
-				case DATE: initFunctionValues('+new Date();', 'Date.now();', 1000000);
+				case DATE: initFunctionValues('+new Date();', 'Date.now();', 100000);
 					break;
-				case CACHE: initFunctionValues('var body = $("body");\n\nfor (var i = 0; i < 100000; i++) {\n\tbody.css("color", "black");\n}',
-											   'for (var i = 0; i < 100000; i++) {\n\t$("body").css("color", "black");\n}', 1);
+				case CACHE: initFunctionValues('var body = $("body");\n\nfor (var i = 0; i < 10000; i++) {\n\tbody.css("color", "black");\n}',
+											   'for (var i = 0; i < 10000; i++) {\n\t$("body").css("color", "black");\n}', 1);
 					break;
 				case TIMEOUT: initFunctionValues('var temp = 0,\n\ttimeout = $injector.get("$timeout");\n\ntimeout(function() {\n\ttemp++;\n}, 0);',
-												 'var temp = 0,\n\ttimeout = $injector.get("$timeout");\n\nsetTimeout(function() {\n\ttemp++;\n}, 0);', 100000);
+												 'var temp = 0,\n\ttimeout = $injector.get("$timeout");\n\nsetTimeout(function() {\n\ttemp++;\n}, 0);', 10000);
 					break;
-				case ARRAY: initFunctionValues('var arr = new Array(10000000);\n\nfor (var i = 0; i < 10000000; i++) {\n\tarr[i] = i;}',
-											 'var arr = [];\n\nfor (var i = 0; i < 10000000; i++) {\n\tarr[i] = i;}', 1);
+				case ARRAY: initFunctionValues('var arr = new Array(1000000);\n\nfor (var i = 0; i < 1000000; i++) {\n\tarr[i] = i;}',
+											 'var arr = [];\n\nfor (var i = 0; i < 1000000; i++) {\n\tarr[i] = i;}', 1);
 					break;
-				case FOR: initFunctionValues('var arr = [];\n\nfor (var i = 0; i < 1000000; i++) {\n\tarr[i] = i;\n}\n\nfor (var t in arr) {\n\tarr[t]+=t;\n}',
-											 'var arr = [];\n\nfor (var i = 0; i < 1000000; i++) {\n\tarr[i] = i;\n}\n\nfor (var t = 0; t < arr.length; t++) {\n\tarr[t]+=t;\n}', 1);
+				case FOR: initFunctionValues('var arr = [];\n\nfor (var i = 0; i < 100000; i++) {\n\tarr[i] = i;\n}\n\nfor (var t in arr) {\n\tarr[t]+=t;\n}',
+											 'var arr = [];\n\nfor (var i = 0; i < 100000; i++) {\n\tarr[i] = i;\n}\n\nfor (var t = 0; t < arr.length; t++) {\n\tarr[t]+=t;\n}', 1);
 			}
 			compare();
 		}
+		
 		function initFunctionValues (func1, func2, loops) {
 			$scope.userFunction1 = func1;
 			$scope.userFunction2 = func2;
@@ -112,7 +113,7 @@
 
 require('./tab.js');
 require('./compare.js');
-}).call(this,require("+7ZJp0"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_c8185424.js","/")
+}).call(this,require("+7ZJp0"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_3d2296bb.js","/")
 },{"+7ZJp0":7,"./compare.js":1,"./tab.js":3,"buffer":4}],3:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 //////////////////////////////////////////

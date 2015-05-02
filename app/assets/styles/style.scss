@@ -155,8 +155,6 @@ h3 {
 .btn-info {
 	@include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
 	border: 3px solid #5bc0de;
-			transform: translateX(-3px); // space gained from the border
-	-webkit-transform: translateX(-3px); // space gained from the border
 	&:hover {
 		background: none;
 		color: #5bc0de;
