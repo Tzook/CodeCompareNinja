@@ -311,7 +311,8 @@ textarea {
 
 input[type="number"] {
   margin: auto;
-  max-width: 120px; }
+  max-width: 120px;
+  width: 100%; }
 
 h4 {
   margin-top: 25px; }
