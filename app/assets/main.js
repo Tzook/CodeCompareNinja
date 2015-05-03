@@ -18,7 +18,7 @@
 	Compare.$inject = ['$scope', '$timeout', '$injector'];
 
 	function Compare ($scope, $timeout, $injector) {
-		$scope.footer = '<p>Created by:<br><a target="_blank" href="https://www.linkedin.com/in/tzook">Tzook</a> &amp; <a target="_blank" href="https://www.linkedin.com/pub/noam-elboim/a6/372/a">Noam</a><br><a target="_blank" href="https://github.com/Tzook/CodeCompare.ninja">Source</a></p>';
+		$scope.footer = '<p>Created by:<br><a target="_blank" href="https://www.linkedin.com/in/tzook">Tzook</a> &amp; <a target="_blank" href="https://www.linkedin.com/pub/noam-elboim/a6/372/a">Noam</a><br><a target="_blank" href="https://github.com/Tzook/CodeCompareNinja">Source</a></p>';
 		$scope.showExample = false;
 		$scope.examples = [DATE, CACHE, TIMEOUT, ARRAY, FOR];
 
@@ -113,7 +113,7 @@
 
 require('./tab.js');
 require('./compare.js');
-}).call(this,require("+7ZJp0"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_3d2296bb.js","/")
+}).call(this,require("+7ZJp0"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_def390ae.js","/")
 },{"+7ZJp0":7,"./compare.js":1,"./tab.js":3,"buffer":4}],3:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 //////////////////////////////////////////
